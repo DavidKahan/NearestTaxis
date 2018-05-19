@@ -27,16 +27,11 @@ public class MainActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
         mRecyclerView = findViewById(R.id.taxis_recycler_view);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // specify an adapter (see also next example)
         mAdapter = new TaxisAdapter(viewModel.getTaxis().getValue());
 
         mRecyclerView.setAdapter(mAdapter);
@@ -65,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        handler.removeCallbacks(runnable); //stop handler when activity not visible
+        handler.removeCallbacks(runnable); //stop handler when activity is not visible
         super.onPause();
     }
 }

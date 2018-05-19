@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class Taxi {
 
     private int etaInMin, stationIconUrl;
-    private String stationName, etaStr;
+    private String stationName;
 
     public Taxi(int stationIconUrl, String stationName) {
         this.stationIconUrl = stationIconUrl;
@@ -43,28 +43,17 @@ public class Taxi {
     public String getEtaStr() {
         long hours = TimeUnit.MINUTES.toHours(etaInMin);
         long remainMinute = etaInMin - TimeUnit.HOURS.toMinutes(hours);
+        Locale locale = Locale.getDefault();
         if (hours <= 0) {
-            return String.format(Locale.getDefault(), "%2d", remainMinute) + "m";
+            return String.format(locale, "%2d", remainMinute) + "m";
         }
 
         if (remainMinute <= 0) {
-            return String.format(Locale.getDefault(), "%2d", hours) + "h ";
+            return String.format(locale, "%2d", hours) + "h ";
         }
 
-        return String.format(Locale.getDefault(), "%2d", hours) + "h "
-                + String.format(Locale.getDefault(), "%2d", remainMinute) + "m";
-
-//        if (hours > 0) {
-//            if (remainMinute > 0) {
-//                etaStr = String.format(Locale.getDefault(), "%2d", hours) + "h "
-//                        + String.format(Locale.getDefault(), "%2d", remainMinute) + "m";
-//            } else {
-//                etaStr = String.format(Locale.getDefault(), "%2d", hours) + "h ";
-//            }
-//        } else {
-//            etaStr = String.format(Locale.getDefault(), "%2d", remainMinute) + "m";
-//        }
-//        return etaStr;
+        return String.format(locale, "%2d", hours) + "h "
+                + String.format(locale, "%2d", remainMinute) + "m";
     }
 
 

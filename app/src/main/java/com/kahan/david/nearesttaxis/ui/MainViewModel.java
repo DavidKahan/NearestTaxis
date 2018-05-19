@@ -36,25 +36,5 @@ public class MainViewModel extends ViewModel{
             Collections.sort(loadedTaxis, (t1, t2) -> Integer.compare(t1.getEtaInMin(), t2.getEtaInMin()));
             taxis.setValue(loadedTaxis);
         });
-//        List<Taxi> loadedTaxis = new ArrayList<>();
-//        loadedTaxis.add(new Taxi(R.drawable.spurs, "Spurs"));
-//        loadedTaxis.add(new Taxi(R.drawable.cavaliers, "Shekem"));
-//        loadedTaxis.add(new Taxi(R.drawable.golden, "Habima"));
-//        loadedTaxis.add(new Taxi(R.drawable.raptors, "Gordon"));
-//        loadedTaxis.add(new Taxi(R.drawable.sixers, "Azrieli"));
-//        loadedTaxis.add(new Taxi(R.drawable.rockets, "Hadera"));
-//        loadedTaxis.add(new Taxi(R.drawable.knicks, "Apple"));
-//        loadedTaxis.add(new Taxi(R.drawable.lakers, "Top10"));
-//        loadedTaxis.add(new Taxi(R.drawable.blazers, "Tapuz"));
-//        loadedTaxis.add(new Taxi(R.drawable.wizards, "Wizards"));
-//        loadedTaxis.add(new Taxi(R.drawable.celtics, "Celtics"));
-//        loadedTaxis.add(new Taxi(R.drawable.grizzlies, "Grizzlies"));
-//        loadedTaxis.add(new Taxi(R.drawable.heat, "Heat"));
-//        loadedTaxis.add(new Taxi(R.drawable.jazz, "Jazz"));
-//        loadedTaxis.add(new Taxi(R.drawable.mavericks, "Mavericks"));
-//        loadedTaxis.add(new Taxi(R.drawable.thunder, "Thunder"));
-//        loadedTaxis.add(new Taxi(R.drawable.timberwolves, "Timberwolves"));
-//        Collections.sort(loadedTaxis, (t1, t2) -> Integer.compare(t1.getEtaInMin(), t2.getEtaInMin()));
-//        taxis.setValue(loadedTaxis);
     }
 }
