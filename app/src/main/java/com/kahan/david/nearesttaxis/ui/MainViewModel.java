@@ -4,7 +4,6 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.kahan.david.nearesttaxis.model.StubTaxisRepository;
 import com.kahan.david.nearesttaxis.model.Taxi;
 import com.kahan.david.nearesttaxis.model.TaxisRepository;
 
@@ -19,8 +18,8 @@ public class MainViewModel extends ViewModel{
     private TaxisRepository mTaxisRepository;
     private MutableLiveData<List<Taxi>> taxis;
 
-    public MainViewModel() {
-        mTaxisRepository = StubTaxisRepository.getInstance();
+    public void setTaxisRepository(TaxisRepository mTaxisRepository) {
+        this.mTaxisRepository = mTaxisRepository;
     }
 
     public LiveData<List<Taxi>> getTaxis() {

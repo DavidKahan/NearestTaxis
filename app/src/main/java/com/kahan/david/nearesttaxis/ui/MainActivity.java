@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.kahan.david.nearesttaxis.R;
+import com.kahan.david.nearesttaxis.model.StubTaxisRepository;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel.setTaxisRepository(StubTaxisRepository.getInstance());
 
         mRecyclerView = findViewById(R.id.taxis_recycler_view);
         mRecyclerView.setHasFixedSize(true);
